@@ -1,11 +1,10 @@
 # Wsgi bridge
 
-This is a bridge between Python 3 standard library BaseHttpRequest-based servers and wsgi
-allowing one to create a wsgi app from a standard library request.
+This is a bridge between Python 3 standard library 
 
 # Usage
 
-`wsgi_bridge.WsgiServer` takes a BaseHttpRequestHandler application and produces a wsgi application (as the object's `serve` method). This can then be called from a [wsgi server](https://wsgi.readthedocs.io/en/latest/servers.html) (in the code below we use the reference implementation of wsgi).
+`wsgi_bridge.WsgiServer` takes a [http.server]([http.server](https://docs.python.org/3/library/http.server.html)-based application and produces a wsgi application (as the object's `serve` method). This can then be called from a [wsgi server](https://wsgi.readthedocs.io/en/latest/servers.html) (in the code below we use the reference implementation of wsgi).
 
 ```
     import wsgiref.simple_server
@@ -22,7 +21,7 @@ on a users system.
 
 More generally wsgi is the defacto standard for python web applications,
 with [many tools](https://wsgi.readthedocs.io/en/latest/libraries.html) for enhancing
-and combining wsgi applications. Converting a BaseHTTPServer-based application to
+and combining wsgi applications. Converting a `http.server`-based application to
 to wsgi allows the application to interact with these tools. Additionally, in many
 ways an application configured purely in python in more tractable and certainly easier
 to distribute.
